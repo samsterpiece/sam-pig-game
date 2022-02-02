@@ -1,0 +1,19 @@
+{
+  "name": "piggame",
+  "version": "1.0.0",
+  "description": "Game instance of pig game.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsterpiece/sam-pig-game.git"
+  },
+  "author": "Samantha Badeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samsterpiece/sam-pig-game/issues"
+  },
+  "homepage": "https://github.com/samsterpiece/sam-pig-game#readme"
+}

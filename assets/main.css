@@ -1,0 +1,363 @@
+/*
+===================================
+
+Main component
+====================================
+*/
+
+
+/* Start of winner effect */
+.winnerText {
+    -webkit-animation: fadeinout 15s linear forwards;
+    animation: fadeinout 15s linear forwards;
+    font-size: 40px;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+/* End of winner effect */
+
+
+
+body {
+    padding: 70px 80px;
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+.main-component {
+    padding: 40px;
+    width: 60vw;
+    margin: 0 auto;
+    box-shadow: rgba(231, 2, 90, 0.56) 0px 22px 70px 4px;
+    border: 3px solid #e02e2e;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    position: relative;
+}
+
+h4.left.player--0.player--active {
+    border: 2px solid red;
+    /* size: 10px; */
+    height: auto;
+}
+
+h4.right.player--1 {
+    border: 2px solid red;
+    height: auto;
+}
+
+
+/* Beginning of help tip */
+
+
+/* question {
+    font-size: 45px;
+} */
+
+.popIcon {
+    position: absolute;
+    display: flex;
+    content: "";
+    top: 10px;
+    right: 10px;
+    background: mistyrose;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+
+
+    -webkit-box-shadow: 0 2px 2px #999;
+    -moz-box-shadow: 0 2px 2px #999;
+    box-shadow: 0 2px 2px #999;
+
+}
+
+
+/* 
+#openModal a{
+    font-size: 20px;
+} */
+
+.modalDialog {
+    position: fixed;
+    font-size: 20px;
+    top: -15%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    color: black;
+
+
+}
+
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 10px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: #D9AFD9;
+    -webkit-box-shadow: 0 4px 4px #999;
+    -moz-box-shadow: 0 4px 4px #999;
+    box-shadow: 0 4px 4px #999;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #00d9ff;
+}
+
+/*End of help tip */
+
+h4 {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left,
+.right {
+    width: 35%;
+    height: 200px;
+}
+
+.current-score0,
+.current-score1 {
+    display: flex;
+    justify-content: center;
+    margin: 30% auto;
+    border: 2px solid coral;
+    width: 50%;
+    height: 34%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Dice styling */
+.container {
+    /* width: 30%; */
+    width: 25%;
+    padding: 50px;
+    position: relative;
+    /* top: 50%; */
+    /* border: 2px solid gray; */
+}
+
+img {
+    height: 65px;
+}
+
+.dice-wrapper {
+    display: flex;
+    align-items: center;
+    /* align-self: center; */
+    /* justify-self: center; */
+    justify-content: space-around;
+    /* justify-content: center; */
+    height: 150px;
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+
+    100% {
+        transform: rotate(8deg);
+    }
+}
+
+/*End of dice styling */
+
+/*Score styling */
+.temp-score {
+    font-weight: bolder;
+    margin: 30px auto;
+    font-size: 20px;
+
+}
+
+.life-score {
+    display: flex;
+    justify-content: space-between;
+}
+
+p.temp-score {
+    display: flex;
+    justify-content: center;
+}
+
+/* Active Player Styling */
+.player--active {
+    background-color: lightpink;
+}
+
+.player--active {
+    font-weight: 700;
+    /* font-size: 20px; */
+}
+
+.player--active .score {
+    font-weight: 400;
+}
+
+.player--active .current {
+    opacity: 1;
+}
+
+.player--winner {
+    background-color: #2f2f2f;
+}
+
+.player--winner .name {
+    font-weight: 700;
+    color: #c7365f;
+}
+
+
+/* CSS Styles on Buttons */
+.roll,
+.hold,
+.new {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.roll:after,
+.hold:after,
+.new:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.roll:hover:after,
+.hold:hover:after,
+.new:hover:after {
+    transform: translate(0, 0);
+}
+
+.roll:active,
+.hold:active,
+.new:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+.roll:hover,
+.hold:hover,
+.new:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+
+    .roll,
+    .hold .new {
+        padding: 0 40px;
+    }
+}
+
+.hidden {
+    display: none;
+}

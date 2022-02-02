@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/main.css" />
+    <title>Pig Game</title>
+</head>
+
+<body>
+    <div class='winnerText' t>
+        <marquee behavior="scroll" scrollamount=15 direction="left">Winner!</marquee>
+    </div>
+
+    <h1>Welcome to the Pig Game</h1>
+
+
+    <i class="fa-thin fa-pig"></i>
+
+    <div class="main-component">
+        <a href="#openModal" class="popIcon">
+            ?
+        </a>
+        <h2>Pig Game</h2>
+
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+
+                <article>
+                    <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the
+                        player decides to "hold":</p>
+
+                    <p>The rules are as follows:</p>
+                    <ol>
+                        <li> If the player rolls a 1, they score nothing and it becomes the next player's turn.
+                        </li>
+                        <li> If the player rolls any other number, it is added to their turn total and the player's
+                            turn
+                            continues.</li>
+                        <li>If a player chooses to "hold", their turn total is added to their score, and it becomes
+                            the
+                            next
+                            player's turn.</li>
+                        <li>Snake Eyes is when a player's dies <b>both</b> are 1's. The player scores nothing on
+                            their
+                            turn,
+                            their total score goes to 0, and their turn ends. </li>
+                        <li>Any double matching dies that are rolled(except Snake eyes), the sum of the dice is
+                            added to
+                            the current score,
+                            but cannot "hold" and must roll again.</li>
+                    </ol>
+                </article>
+
+            </div>
+        </div>
+
+
+        <h2 class="snakeText">Snake eyes!</h2>
+        <!-- <div class="help-tip" class="modalDialog">
+            <p>Welcome to the Pig Game! This is a simple dice game where players take turns to roll a single dice
+                as many times as they wish. The rules are quite simple:
+                <br>
+                <br>
+                1. If a player rolls a one, it becomes the next player's turn.
+                <br>
+                <br>
+                2. If a player rolls any other number, it is added to the "Current Score" and player turn continues
+                until a "1" shows up or until the player decides to hold.
+                <br>
+                <br>
+                3. When a player holds, the current total is transferred to the total score and player's turn ends,
+                going to the next player.
+                <br>
+                <br>
+                4. When a player gets a "1" on both dies, snake eyes is called where player scores nothing, total score
+                goes to 0, and their turn ends.
+                <a href="#close" title="Close" class="close">X</a>
+            </p>
+
+
+        </div> -->
+
+
+        <div class="life-score">
+            <h3 class="life--0"></h3>
+            <h3 class="life--1"></h3>
+
+        </div>
+        <div class="players">
+            <!--Player One -->
+            <h4 class="left player--0 player--active">Player One
+                <p class="score" id="score--0">25</p>
+                <p class="current-score1" id="current--0">Current Score:</p>
+            </h4>
+
+            <div class="container">
+                <div class="dice-wrapper">
+                    <img src="assets/dice-01.svg" id="die-1" alt="Picture of dice">
+                    <img src="assets/dice-02.svg" id="die-2" alt="Picture of dice">
+                </div>
+                <!--Allow output of number-->
+                <p class="temp-score"></p>
+            </div>
+
+
+            <!--Player Two -->
+            <h4 class="right player--1">Player Two
+                <p class="score" id="score--1">25</p>
+                <p class="current-score1" id="current--1">Current Score:</p>
+            </h4>
+
+        </div>
+        <!-- Buttons -->
+        <div class="buttons">
+            <button onclick="" class="roll">Roll</button>
+            <button class="hold">Hold</button>
+            <button class="new">New Game</button>
+        </div>
+    </div>
+
+
+    <!--Script-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+
+
+</html>
+
+
+</body>

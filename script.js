@@ -33,17 +33,10 @@ let scores, currentScore, activePlayer, playing;
 let dice = document.querySelectorAll("img");
 
 
-//opens popup of game instructions when page loads
-function openPopup() {
-    window.location.hash = '';
-}
-
-window.onload = openPopup;
-
 
 // Helper function for localStorage
 const getLifetimeScore = function (player) {
-    return Number(localStorage.getItem(`lifetime-score-${player}`)) ?? 0;
+    return Number(localStorage.getItem(`lifetime-score-${player}`)) ? ? 0;
 }
 
 // Helper function that sets new lifetime score in local storage, and updates dom
@@ -98,7 +91,7 @@ const switchPlayer = function () {
 btnRoll.addEventListener('click', function roll() {
 
     if (playing) {
-    
+
         //Adding effect to dice shake
         dice.forEach(function (die) {
             die.classList.add("shake");
@@ -122,20 +115,19 @@ btnRoll.addEventListener('click', function roll() {
 
                 console.log("Die one:", dieOneValue, "Die two: ", dieTwoValue);
 
-
-                //Case 1: One of the dies is one, go to next player
-                if (dieOneValue === 1 || dieTwoValue === 1) {
-
-                    btnHold.disabled = false;
-                    switchPlayer();
-                } else if (dieOneValue === 1 && dieTwoValue === 1) {
-                    //Case 2: Snake Eyes, no score, total reset, turn ends
+                //Case 1: Snake Eyes, no score, total reset, turn ends
+                if (dieOneValue === 1 && dieTwoValue === 1) {
                     snakeEye.classList.remove('hidden'); //Notification of snake eyes
                     currentScore = 0;
                     scores[activePlayer] = currentScore; //sets current score and total to 0.
                     btnHold.disabled = false;
                     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]; //Adds to page of update
                     switchPlayer(); //changes player
+
+                    //Case 2: One of the dies is one, go to next player
+                } else if (dieOneValue === 1 || dieTwoValue === 1) {
+                    btnHold.disabled = false;
+                    switchPlayer();
                 } else if (dieOneValue === dieTwoValue) { //Case 3: Matching dies
                     btnHold.disabled = true; //Prevents player for holding, must roll again
                     snakeEye.classList.add('hidden');
@@ -161,7 +153,7 @@ btnRoll.addEventListener('click', function roll() {
 btnHold.addEventListener('click', function () {
 
     if (playing) {
-       
+
         // 1. Add current score to active player's score
         scores[activePlayer] += currentScore;
 

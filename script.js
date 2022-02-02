@@ -115,19 +115,20 @@ btnRoll.addEventListener('click', function roll() {
 
                 console.log("Die one:", dieOneValue, "Die two: ", dieTwoValue);
 
-                //Case 1: Snake Eyes, no score, total reset, turn ends
-                if (dieOneValue === 1 && dieTwoValue === 1) {
+
+                //Case 1: One of the dies is one, go to next player
+                if ((die1 === 1 || die2 === 1) && !(die1 === 1 && die2 === 1)) {
+
+                    btnHold.disabled = false;
+                    switchPlayer();
+                } else if (dieOneValue === 1 && dieTwoValue === 1) {
+                    //Case 2: Snake Eyes, no score, total reset, turn ends
                     snakeEye.classList.remove('hidden'); //Notification of snake eyes
                     currentScore = 0;
                     scores[activePlayer] = currentScore; //sets current score and total to 0.
                     btnHold.disabled = false;
                     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]; //Adds to page of update
                     switchPlayer(); //changes player
-
-                    //Case 2: One of the dies is one, go to next player
-                } else if (dieOneValue === 1 || dieTwoValue === 1) {
-                    btnHold.disabled = false;
-                    switchPlayer();
                 } else if (dieOneValue === dieTwoValue) { //Case 3: Matching dies
                     btnHold.disabled = true; //Prevents player for holding, must roll again
                     snakeEye.classList.add('hidden');

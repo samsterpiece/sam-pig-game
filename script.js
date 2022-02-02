@@ -36,7 +36,7 @@ let dice = document.querySelectorAll("img");
 
 // Helper function for localStorage
 const getLifetimeScore = function (player) {
-    return Number(localStorage.getItem(`lifetime-score-${player}`)) ? ? 0;
+    return Number(localStorage.getItem(`lifetime-score-${player}`)) ?? 0;
 }
 
 // Helper function that sets new lifetime score in local storage, and updates dom
@@ -129,6 +129,7 @@ btnRoll.addEventListener('click', function roll() {
                     btnHold.disabled = false;
                     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]; //Adds to page of update
                     switchPlayer(); //changes player
+
                 } else if (dieOneValue === dieTwoValue) { //Case 3: Matching dies
                     btnHold.disabled = true; //Prevents player for holding, must roll again
                     snakeEye.classList.add('hidden');

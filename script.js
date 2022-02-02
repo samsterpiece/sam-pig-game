@@ -117,7 +117,7 @@ btnRoll.addEventListener('click', function roll() {
 
 
                 //Case 1: One of the dies is one, go to next player
-                if ((die1 === 1 || die2 === 1) && !(die1 === 1 && die2 === 1)) {
+                if ((dieOneValue === 1 || dieTwoValue === 1) && !(dieOneValue === 1 && dieTwoValue === 1)) {
 
                     btnHold.disabled = false;
                     switchPlayer();

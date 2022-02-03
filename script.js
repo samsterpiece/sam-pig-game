@@ -116,7 +116,7 @@ btnRoll.addEventListener('click', function roll() {
                 document.querySelector("#die-2").setAttribute("src", images[dieTwoValue - 1]);
 
 
-                console.log("Die one:", dieOneValue, "Die two: ", dieTwoValue);
+                // console.log("Die one:", dieOneValue, "Die two: ", dieTwoValue);
 
 
                 //Case 1: One of the dies is one, go to next player

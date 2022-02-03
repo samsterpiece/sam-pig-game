@@ -15,7 +15,6 @@ Button:disabled {
     -webkit-animation: fadeinout 15s linear forwards;
     animation: fadeinout 15s linear forwards;
     font-size: 40px;
-
     background-clip: text;
     background-size: 400%;
     animation: move 5s ease infinite;
@@ -62,10 +61,6 @@ Button:disabled {
 
 
 /* End of winner effect */
-
-h1 {
-    font-family: 'Roboto', sans-serif;
-}
 
 
 body {
@@ -251,10 +246,7 @@ img {
 .dice-wrapper {
     display: flex;
     align-items: center;
-    /* align-self: center; */
-    /* justify-self: center; */
     justify-content: space-around;
-    /* justify-content: center; */
     height: 150px;
 }
 
@@ -303,7 +295,7 @@ p.temp-score {
 
 .player--active {
     font-weight: 700;
-    /* font-size: 20px; */
+
 }
 
 .player--active .score {
@@ -316,13 +308,10 @@ p.temp-score {
 
 
 
-
-
 .player--winner {
 
     font-size: 20px;
     font-weight: bold;
-
     background-clip: text;
     background-size: 400%;
     animation: move 5s ease infinite;
@@ -358,10 +347,6 @@ p.temp-score {
     font-weight: 700;
     color: #c7365f;
 }
-
-
-
-
 
 
 /* CSS Styles on Buttons */
@@ -434,8 +419,6 @@ p.temp-score {
         padding: 0 40px;
     }
 }
-
-
 
 .hidden {
     display: none;

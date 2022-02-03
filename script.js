@@ -41,8 +41,9 @@ const getLifetimeScore = function (player) {
 
 // Helper function that sets new lifetime score in local storage, and updates dom
 const setLifetimeScore = function (player, currentScore, currentLifetimeScore) {
-    localStorage.setItem(`lifetime-score-${player}`, currentLifetimeScore + currentScore)
-    document.querySelector(`.life--${player}`).textContent = currentLifetimeScore + currentScore
+    localStorage.setItem(`lifetime-score-${player}`, currentLifetimeScore + currentScore);
+    document.querySelector(`.life--${player}`).textContent = "Lifetime Score P1: " + (currentLifetimeScore + currentScore) ?? 0;
+    document.querySelector(`.life--${player}`).textContent = "Lifetime Score P2: " + (currentLifetimeScore + currentScore) ?? 1;
 }
 
 //Initializing conditions for game
@@ -162,7 +163,7 @@ btnHold.addEventListener('click', function () {
           "Total Score: " +  scores[activePlayer];
 
         // 2. Check if player's score is >= 100
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 10) {
 
             winMessage.classList.remove('hidden');
 

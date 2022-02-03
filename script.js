@@ -46,6 +46,8 @@ const setLifetimeScore = function (player, currentScore, currentLifetimeScore) {
     document.querySelector(`.life--${player}`).textContent = "Lifetime Score P2: " + (currentLifetimeScore + currentScore) ?? 1;
 }
 
+
+
 //Initializing conditions for game
 const init = function () {
 

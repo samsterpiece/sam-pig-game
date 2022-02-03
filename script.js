@@ -69,8 +69,8 @@ const init = function () {
     player1El.classList.add('player--active');
     player2El.classList.remove('player--active');
 
-    lifetimeScore1.textContent = "Lifetime Score P1: " + getLifetimeScore(0)
-    lifetimeScore2.textContent = "Lifetime Score P2: " + getLifetimeScore(1)
+    lifetimeScore1.textContent = "Lifetime Score: " + getLifetimeScore(0)
+    lifetimeScore2.textContent = "Lifetime Score: " + getLifetimeScore(1)
 };
 
 init();
@@ -121,6 +121,7 @@ btnRoll.addEventListener('click', function roll() {
 
                 //Case 1: One of the dies is one, go to next player
                 if ((dieOneValue === 1 || dieTwoValue === 1) && !(dieOneValue === 1 && dieTwoValue === 1)) {
+                    snakeEye.classList.add('hidden');
                     btnHold.disabled = false;
                     switchPlayer();
                 } else if (dieOneValue === 1 && dieTwoValue === 1) {
@@ -133,13 +134,13 @@ btnRoll.addEventListener('click', function roll() {
                     switchPlayer(); //changes player
 
                 } else if (dieOneValue === dieTwoValue) { //Case 3: Matching dies
-                    btnHold.disabled = true; //Prevents player for holding, must roll again
                     snakeEye.classList.add('hidden');
+                    btnHold.disabled = true; //Prevents player for holding, must roll again
                     currentScore += (dieOneValue + dieTwoValue); //adds the sum of doubles to current score
                     document.getElementById(`current--${activePlayer}`).textContent = "Turn Score: " + currentScore; //doubles sum reflected in current score
                 } else { //Default case
-                    btnHold.disabled = false;
                     snakeEye.classList.add('hidden');
+                    btnHold.disabled = false;                   
                     currentScore += (dieOneValue + dieTwoValue);
                     document.getElementById(`current--${activePlayer}`).textContent = "Turn Score: " + currentScore;
                 }

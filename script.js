@@ -167,6 +167,7 @@ btnHold.addEventListener('click', function () {
 
         // 2. Check if player's score is >= 100
         if (scores[activePlayer] >= 100) {
+            //Display winner message
             winMessage.classList.remove('hidden');
             // Finish the game
             playing = false;

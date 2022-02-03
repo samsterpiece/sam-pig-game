@@ -5,8 +5,6 @@ Main component
 ====================================
 */
 
-/* Button:disabled { …styles… } */
-
 Button:disabled {
     background-color: #999;
 }
@@ -19,57 +17,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.winnerText {
-    -webkit-animation: fadeinout 15s linear forwards;
-    animation: fadeinout 15s linear forwards;
-    font-size: 40px;
 
-    background-clip: text;
-    background-size: 400%;
-    animation: move 5s ease infinite;
-    background-image: linear-gradient(68.7deg, rgba(29, 173, 235, 1) 13.2%, rgba(137, 149, 250, 1) 29.8%, rgba(229, 109, 212, 1) 48.9%, rgba(255, 68, 128, 1) 68.2%, rgba(255, 94, 0, 1) 86.4%);
-
-    @-webkit-keyframes fadeinout {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeinout {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-    }
-
-
-}
-
-@keyframes move {
-
-    0%,
-    100% {
-        background-position: 200% 0%;
-    }
-
-    50% {
-        background-position: 0% 200%;
-    }
-}
-
-
-/* End of winner effect */
 
 
 
@@ -116,9 +64,6 @@ h4.right.player--1 {
 /* Beginning of help tip */
 
 
-/* question {
-    font-size: 45px;
-} */
 
 .popIcon {
     position: absolute;
@@ -322,9 +267,63 @@ p.temp-score {
     opacity: 1;
 }
 
-.player--winner {
+/* Beginning of winner text effect */
+.winnerText {
     -webkit-animation: fadeinout 15s linear forwards;
     animation: fadeinout 15s linear forwards;
+    font-size: 40px;
+
+    background-clip: text;
+    background-size: 400%;
+    animation: move 5s ease infinite;
+    background-image: linear-gradient(68.7deg, rgba(29, 173, 235, 1) 13.2%, rgba(137, 149, 250, 1) 29.8%, rgba(229, 109, 212, 1) 48.9%, rgba(255, 68, 128, 1) 68.2%, rgba(255, 94, 0, 1) 86.4%);
+
+    @-webkit-keyframes fadeinout {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeinout {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        background-position: 200% 0%;
+    }
+
+    50% {
+        background-position: 0% 200%;
+    }
+}
+
+
+/* End of winner effect */
+
+
+
+.player--winner {
+  
     font-size: 20px;
     font-weight: bold;
 
@@ -363,6 +362,10 @@ p.temp-score {
     font-weight: 700;
     color: #c7365f;
 }
+
+
+
+
 
 
 /* CSS Styles on Buttons */

@@ -166,10 +166,8 @@ btnHold.addEventListener('click', function () {
           "Total Score: " +  scores[activePlayer];
 
         // 2. Check if player's score is >= 100
-        if (scores[activePlayer] >= 100) {
-
+        if (scores[activePlayer] >= 10) {
             winMessage.classList.remove('hidden');
-
             // Finish the game
             playing = false;
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');

@@ -56,10 +56,10 @@ const init = function () {
     activePlayer = 0; //Starting player is at 0. Second player is at 1
     playing = true;
 
-    score1El.textContent = 0;
-    score2El.textContent = 0;
-    current1Element.textContent = 0;
-    current2Element.textContent = 0;
+    score1El.textContent = "Total Score: " + 0;
+    score2El.textContent = "Total Score: " + 0;
+    current1Element.textContent = "Turn Score: " + 0;
+    current2Element.textContent = "Turn Score: " + 0;
 
     player1El.classList.remove('player--winner');
     player2El.classList.remove('player--winner');
@@ -126,19 +126,19 @@ btnRoll.addEventListener('click', function roll() {
                     currentScore = 0;
                     scores[activePlayer] = currentScore; //sets current score and total to 0.
                     btnHold.disabled = false;
-                    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]; //Adds to page of update
+                    document.getElementById(`score--${activePlayer}`).textContent = "Total Score: " + scores[activePlayer]; //Adds to page of update
                     switchPlayer(); //changes player
 
                 } else if (dieOneValue === dieTwoValue) { //Case 3: Matching dies
                     btnHold.disabled = true; //Prevents player for holding, must roll again
                     snakeEye.classList.add('hidden');
                     currentScore += (dieOneValue + dieTwoValue); //adds the sum of doubles to current score
-                    document.getElementById(`current--${activePlayer}`).textContent = currentScore; //doubles sum reflected in current score
+                    document.getElementById(`current--${activePlayer}`).textContent = "Turn Score: " + currentScore; //doubles sum reflected in current score
                 } else { //Default case
                     btnHold.disabled = false;
                     snakeEye.classList.add('hidden');
                     currentScore += (dieOneValue + dieTwoValue);
-                    document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+                    document.getElementById(`current--${activePlayer}`).textContent = "Turn Score: " + currentScore;
                 }
 
 
@@ -159,10 +159,10 @@ btnHold.addEventListener('click', function () {
         scores[activePlayer] += currentScore;
 
         document.getElementById(`score--${activePlayer}`).textContent =
-            scores[activePlayer];
+          "Total Score: " +  scores[activePlayer];
 
         // 2. Check if player's score is >= 100
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 10) {
 
             winMessage.classList.remove('hidden');
 

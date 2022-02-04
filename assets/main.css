@@ -94,12 +94,12 @@ a:focus {
 h4.left.player--0.player--active {
     border: 2px solid red;
     /* size: 10px; */
-    height: auto;
+ 
 }
 
 h4.right.player--1 {
     border: 2px solid red;
-    height: auto;
+   
 }
 
 
@@ -217,7 +217,7 @@ h4 {
 .current-score1 {
     display: flex;
     justify-content: center;
-    margin: 30% auto;
+    margin: 10% auto;
     border: 2px solid coral;
     width: 50%;
     height: 34%;

@@ -12,40 +12,52 @@ Button:disabled {
 /* Beginning of winner text effect */
 .winnerText {
     color: black;
+    overflow: hidden;
     -webkit-animation: fadeinout 15s linear forwards;
     animation: fadeinout 15s linear forwards;
+
     font-size: 40px;
     background-clip: text;
     background-size: 400%;
     animation: move 5s ease infinite;
     background-image: linear-gradient(68.7deg, rgba(29, 173, 235, 1) 13.2%, rgba(137, 149, 250, 1) 29.8%, rgba(229, 109, 212, 1) 48.9%, rgba(255, 68, 128, 1) 68.2%, rgba(255, 94, 0, 1) 86.4%);
 
-    @-webkit-keyframes fadeinout {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeinout {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-    }
-
 
 }
+
+@keyframes move {
+
+
+    0%,
+    100% {
+        background-position: 200% 0%;
+    }
+
+    50% {
+        background-position: 0% 200%;
+    }
+
+    /* End of change color style */
+}
+
+.marquee-text {
+    animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
 
 
 /* End of winner effect */
@@ -296,10 +308,13 @@ p.temp-score {
 
 
 
+
+
 .player--winner {
 
     font-size: 20px;
     font-weight: bold;
+
     background-clip: text;
     background-size: 400%;
     animation: move 5s ease infinite;
@@ -335,6 +350,10 @@ p.temp-score {
     font-weight: 700;
     color: #c7365f;
 }
+
+
+
+
 
 
 /* CSS Styles on Buttons */
@@ -407,6 +426,8 @@ p.temp-score {
         padding: 0 40px;
     }
 }
+
+
 
 .hidden {
     display: none;
